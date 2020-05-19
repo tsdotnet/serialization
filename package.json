@@ -1,13 +1,19 @@
 {
   "name": "@tsdotnet/serialization",
   "version": "1.0.2",
-  "description": "",
+  "description": "Interfaces and utility for implementing serialization and serializable objects.",
   "author": "electricessence",
   "license": "MIT",
   "types": "dist/Serialize.d.ts",
   "main": "dist/Serialize.js",
   "module": "dist-esm/Serialize.js",
-  "keywords": [],
+  "keywords": [
+    "serialize",
+    "serializable",
+    "serialization",
+    "toString",
+    "to string"
+  ],
   "scripts": {
     "build:dist": "rimraf dist/* && copyfiles -u 1 src/**/*.d.ts dist && tsc",
     "build:dist-esm": "rimraf dist-esm/* && tsc -p tsconfig.esm.json",

@@ -4,7 +4,7 @@
 ![npm-publish](https://github.com/tsdotnet/serialization/workflows/npm-publish/badge.svg)
 [![npm version](https://img.shields.io/npm/v/@tsdotnet/serialization.svg?style=flat-square)](https://www.npmjs.com/package/@tsdotnet/serialization)
 
-
+Interfaces and utility for implementing serialization and serializable objects.
 
 ## Docs
 
