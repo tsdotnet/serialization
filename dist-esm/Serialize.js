@@ -2,8 +2,8 @@
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT https://github.com/electricessence/TypeScript.NET-Core/blob/master/LICENSE.md
  */
-import type from '@tsdotnet/compare/dist/type';
 import InvalidOperationException from '@tsdotnet/exceptions/dist/InvalidOperationException';
+import type from '@tsdotnet/type';
 const EMPTY = '', TRUE = 'true', FALSE = 'false';
 /**
  * Serializes the specified value to a string.

@@ -4,8 +4,8 @@
  */
 
 import {Primitive} from '@tsdotnet/common-interfaces';
-import type from '@tsdotnet/compare/dist/type';
 import InvalidOperationException from '@tsdotnet/exceptions/dist/InvalidOperationException';
+import type from '@tsdotnet/type';
 import Serializable from './Serializable';
 
 export {Serializable};
