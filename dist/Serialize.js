@@ -19,7 +19,7 @@ const EMPTY = '', TRUE = 'true', FALSE = 'false';
 function toString(value, defaultForUnknown) {
     if (value == null)
         return value;
-    switch (value) {
+    switch (typeof value) {
         case 'string':
             return value;
         case 'boolean':

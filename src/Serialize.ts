@@ -50,7 +50,7 @@ export function toString (
 	if(value==null)
 		return value;
 
-	switch(value)
+	switch(typeof value)
 	{
 		case 'string':
 			return value;
