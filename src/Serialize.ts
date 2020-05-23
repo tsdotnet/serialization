@@ -70,7 +70,7 @@ export function toString (
 
 }
 
-export function isSerializable (instance: any): instance is Serializable
+export function isSerializable (instance: unknown): instance is Serializable
 {
 	return type.hasMemberOfType<Serializable>(instance, 'serialize', 'function');
 }
