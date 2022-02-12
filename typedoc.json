@@ -1,6 +1,6 @@
 {
   "entryPoints": [
-    "./src/Serializable.ts"
+    "./src/Serialize.ts"
   ],
   "out": "docs",
   "includeVersion": true,
