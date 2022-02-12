@@ -1,6 +1,6 @@
 {
   "name": "@tsdotnet/serialization",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Interfaces and utility for implementing serialization and serializable objects.",
   "author": "electricessence",
   "license": "MIT",
