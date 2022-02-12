@@ -6,8 +6,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.toPrimitive = exports.isSerializable = exports.toString = void 0;
 const tslib_1 = require("tslib");
-const InvalidOperationException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/InvalidOperationException"));
-const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
+const InvalidOperationException_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/exceptions/dist/InvalidOperationException"));
+const type_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/type"));
 const EMPTY = '', TRUE = 'true', FALSE = 'false';
 /**
  * Serializes the specified value to a string.
