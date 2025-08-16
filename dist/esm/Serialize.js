@@ -1,13 +1,9 @@
-"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT https://github.com/electricessence/TypeScript.NET-Core/blob/master/LICENSE.md
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.toPrimitive = exports.isSerializable = exports.toString = void 0;
-const tslib_1 = require("tslib");
-const InvalidOperationException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/InvalidOperationException"));
-const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
+import { InvalidOperationException } from '@tsdotnet/exceptions';
+import type from '@tsdotnet/type';
 const EMPTY = '', TRUE = 'true', FALSE = 'false';
 /**
  * Serializes the specified value to a string.
@@ -16,7 +12,7 @@ const EMPTY = '', TRUE = 'true', FALSE = 'false';
  * @param {string} defaultForUnknown
  * @return {string | null | undefined}
  */
-function toString(value, defaultForUnknown) {
+export function toString(value, defaultForUnknown) {
     if (value == null)
         return value;
     switch (typeof value) {
@@ -31,15 +27,13 @@ function toString(value, defaultForUnknown) {
                 return value.serialize();
             else if (defaultForUnknown)
                 return defaultForUnknown;
-            throw new InvalidOperationException_1.default('Attempting to serialize unidentifiable type.');
+            throw new InvalidOperationException('Attempting to serialize unidentifiable type.');
     }
 }
-exports.toString = toString;
-function isSerializable(instance) {
-    return type_1.default.hasMemberOfType(instance, 'serialize', 'function');
+export function isSerializable(instance) {
+    return type.hasMemberOfType(instance, 'serialize', 'function');
 }
-exports.isSerializable = isSerializable;
-function toPrimitive(value, caseInsensitive, unknownHandler) {
+export function toPrimitive(value, caseInsensitive, unknownHandler) {
     if (value) {
         if (caseInsensitive)
             value = value.toLowerCase();
@@ -77,5 +71,4 @@ function toPrimitive(value, caseInsensitive, unknownHandler) {
     }
     return value;
 }
-exports.toPrimitive = toPrimitive;
 //# sourceMappingURL=Serialize.js.map

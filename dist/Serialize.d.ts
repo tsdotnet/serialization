@@ -3,7 +3,7 @@
  * Licensing: MIT https://github.com/electricessence/TypeScript.NET-Core/blob/master/LICENSE.md
  */
 import { Primitive } from '@tsdotnet/common-interfaces';
-import Serializable from './Serializable';
+import type Serializable from './Serializable';
 export { Serializable };
 /**
  * Returns null for null.

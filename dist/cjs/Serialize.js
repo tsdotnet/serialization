@@ -1,9 +1,15 @@
+"use strict";
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT https://github.com/electricessence/TypeScript.NET-Core/blob/master/LICENSE.md
  */
-import InvalidOperationException from '@tsdotnet/exceptions/dist/InvalidOperationException';
-import type from '@tsdotnet/type';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.toString = toString;
+exports.isSerializable = isSerializable;
+exports.toPrimitive = toPrimitive;
+const tslib_1 = require("tslib");
+const exceptions_1 = require("@tsdotnet/exceptions");
+const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
 const EMPTY = '', TRUE = 'true', FALSE = 'false';
 /**
  * Serializes the specified value to a string.
@@ -12,7 +18,7 @@ const EMPTY = '', TRUE = 'true', FALSE = 'false';
  * @param {string} defaultForUnknown
  * @return {string | null | undefined}
  */
-export function toString(value, defaultForUnknown) {
+function toString(value, defaultForUnknown) {
     if (value == null)
         return value;
     switch (typeof value) {
@@ -27,13 +33,13 @@ export function toString(value, defaultForUnknown) {
                 return value.serialize();
             else if (defaultForUnknown)
                 return defaultForUnknown;
-            throw new InvalidOperationException('Attempting to serialize unidentifiable type.');
+            throw new exceptions_1.InvalidOperationException('Attempting to serialize unidentifiable type.');
     }
 }
-export function isSerializable(instance) {
-    return type.hasMemberOfType(instance, 'serialize', 'function');
+function isSerializable(instance) {
+    return type_1.default.hasMemberOfType(instance, 'serialize', 'function');
 }
-export function toPrimitive(value, caseInsensitive, unknownHandler) {
+function toPrimitive(value, caseInsensitive, unknownHandler) {
     if (value) {
         if (caseInsensitive)
             value = value.toLowerCase();
