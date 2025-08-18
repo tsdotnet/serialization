@@ -11,13 +11,6 @@ const tslib_1 = require("tslib");
 const exceptions_1 = require("@tsdotnet/exceptions");
 const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
 const EMPTY = '', TRUE = 'true', FALSE = 'false';
-/**
- * Serializes the specified value to a string.
- * @throws if unable to serialize unknown.
- * @param {Primitive | Serializable | undefined | null} value
- * @param {string} defaultForUnknown
- * @return {string | null | undefined}
- */
 function toString(value, defaultForUnknown) {
     if (value == null)
         return value;
@@ -67,8 +60,6 @@ function toPrimitive(value, caseInsensitive, unknownHandler) {
                                 return number;
                         }
                     }
-                    // Handle Dates...  Possibly JSON?
-                    // Instead of throwing we allow for handling...
                     if (unknownHandler)
                         value = unknownHandler(value);
                     break;

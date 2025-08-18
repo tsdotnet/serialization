@@ -1,18 +1,12 @@
+import { InvalidOperationException } from '@tsdotnet/exceptions';
+import type from '@tsdotnet/type';
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * Licensing: MIT https://github.com/electricessence/TypeScript.NET-Core/blob/master/LICENSE.md
  */
-import { InvalidOperationException } from '@tsdotnet/exceptions';
-import type from '@tsdotnet/type';
 const EMPTY = '', TRUE = 'true', FALSE = 'false';
-/**
- * Serializes the specified value to a string.
- * @throws if unable to serialize unknown.
- * @param {Primitive | Serializable | undefined | null} value
- * @param {string} defaultForUnknown
- * @return {string | null | undefined}
- */
-export function toString(value, defaultForUnknown) {
+function toString(value, defaultForUnknown) {
     if (value == null)
         return value;
     switch (typeof value) {
@@ -30,10 +24,10 @@ export function toString(value, defaultForUnknown) {
             throw new InvalidOperationException('Attempting to serialize unidentifiable type.');
     }
 }
-export function isSerializable(instance) {
+function isSerializable(instance) {
     return type.hasMemberOfType(instance, 'serialize', 'function');
 }
-export function toPrimitive(value, caseInsensitive, unknownHandler) {
+function toPrimitive(value, caseInsensitive, unknownHandler) {
     if (value) {
         if (caseInsensitive)
             value = value.toLowerCase();
@@ -41,7 +35,7 @@ export function toPrimitive(value, caseInsensitive, unknownHandler) {
             case 'null':
                 return null;
             case 'undefined':
-                return void (0);
+                return void 0;
             case TRUE:
                 return true;
             case FALSE:
@@ -61,8 +55,6 @@ export function toPrimitive(value, caseInsensitive, unknownHandler) {
                                 return number;
                         }
                     }
-                    // Handle Dates...  Possibly JSON?
-                    // Instead of throwing we allow for handling...
                     if (unknownHandler)
                         value = unknownHandler(value);
                     break;
@@ -71,4 +63,6 @@ export function toPrimitive(value, caseInsensitive, unknownHandler) {
     }
     return value;
 }
+
+export { isSerializable, toPrimitive, toString };
 //# sourceMappingURL=Serialize.js.map
