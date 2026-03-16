@@ -6,7 +6,7 @@
 import {Primitive} from '@tsdotnet/common-interfaces';
 import {InvalidOperationException} from '@tsdotnet/exceptions';
 import type from '@tsdotnet/type';
-import type Serializable from './Serializable';
+import type Serializable from './Serializable.js';
 
 export {Serializable};
 

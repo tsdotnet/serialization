@@ -3,7 +3,7 @@
  * Licensing: MIT https://github.com/electricessence/TypeScript.NET-Core/blob/master/LICENSE.md
  */
 import { Primitive } from '@tsdotnet/common-interfaces';
-import type Serializable from './Serializable';
+import type Serializable from './Serializable.js';
 export { Serializable };
 export declare function toString(value: null, defaultForUnknown?: string): null;
 export declare function toString(value: undefined, defaultForUnknown?: string): undefined;
