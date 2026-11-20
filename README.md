@@ -1,4 +1,4 @@
-![@tsdotnet/serialization: Values to text, and back. Serialize primitives and your own types.](https://cdn.jsdelivr.net/gh/tsdotnet/serialization@master/assets/banner.svg)
+<a href="https://tsdotnet.github.io/serialization/"><img src="https://cdn.jsdelivr.net/gh/tsdotnet/serialization@master/assets/banner.svg" alt="@tsdotnet/serialization: Values to text, and back. Serialize primitives and your own types."></a>
 
 [![npm version](https://img.shields.io/npm/v/@tsdotnet/serialization.svg?style=flat-square)](https://www.npmjs.com/package/@tsdotnet/serialization)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/tsdotnet/serialization/blob/master/LICENSE)
