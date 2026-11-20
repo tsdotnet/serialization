@@ -4,6 +4,10 @@
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.tsdotnet = global.tsdotnet || {}, global.tsdotnet.serialization = global.tsdotnet.serialization || {}), global.tsdotnet.exceptions, global.tsdotnet.type));
 })(this, (function (exports, exceptions, type) { 'use strict';
 
+    function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
+
+    var type__default = /*#__PURE__*/_interopDefault(type);
+
     /*!
      * @author electricessence / https://github.com/electricessence/
      * Licensing: MIT https://github.com/electricessence/TypeScript.NET-Core/blob/master/LICENSE.md
@@ -28,7 +32,7 @@
         }
     }
     function isSerializable(instance) {
-        return type.hasMemberOfType(instance, 'serialize', 'function');
+        return type__default.default.hasMemberOfType(instance, 'serialize', 'function');
     }
     function toPrimitive(value, caseInsensitive, unknownHandler) {
         if (value) {
